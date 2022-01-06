@@ -1,0 +1,103 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- send_email
+- cuisine_check
+- budget_check
+- greet
+- restaurant_search
+- affirm
+- goodbye
+- stop
+- bot_challenge
+- deny
+- location_search
+entities:
+- budget
+- cuisine
+- email
+- location
+slots:
+  budget:
+    type: text
+    influence_conversation: true
+  cuisine:
+    type: text
+    influence_conversation: true
+  email:
+    type: text
+    influence_conversation: true
+  location:
+    type: text
+    influence_conversation: true
+  restaurants_file:
+    type: text
+    influence_conversation: true
+responses:
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Mexican
+      title: Mexican
+    - payload: Italian
+      title: Italian
+    - payload: American
+      title: American
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: what kind of cuisine would you like?
+  utter_ask_another_location:
+  - text: Sorry, we don’t operate in this city. Please specify some other location.
+  utter_ask_budget:
+  - buttons:
+    - payload: Lesser than 300
+      title: Lesser than 300
+    - payload: 300 to 700
+      title: 300 to 700
+    - payload: More than 700
+      title: More than 700
+    text: What price range are you looking at?
+  utter_location_not_serviced:
+  - text: Sorry, we don’t operate in this city yet. Can you please specify some other location?
+  utter_cuisine_not_found:
+  - text: Please select from the list of available cuisines!
+  utter_ask_howcanhelp:
+  - text: how can I help you?
+  utter_ask_location:
+  - text: In what location?
+  utter_default:
+  - text: i cannot understand.
+  utter_goodbye:
+  - text: goodbye
+  - text: Bye-bye
+  utter_greet:
+  - text: hey there! How may i help you
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How May I help you Today
+  utter_ask_send_email:
+  - text: Should I send you details of top 10 restaurants on email?
+  utter_enter_email:
+  - text: Please enter your email address
+actions:
+- action_check_cuisine
+- action_check_location
+- action_restart
+- action_search_restaurants
+- action_send_email
+- utter_ask_another_location
+- utter_ask_budget
+- utter_ask_cuisine
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_ask_send_email
+- utter_cuisine_not_found
+- utter_default
+- utter_enter_email
+- utter_goodbye
+- utter_greet
+- utter_location_not_serviced
+version: '2.0'
