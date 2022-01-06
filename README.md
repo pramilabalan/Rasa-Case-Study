@@ -46,3 +46,12 @@ Finally, the bot should ask the user whether he/she wants the details of the top
   Restaurant locality address
   Average budget for two people
   Zomato user rating
+
+
+Accomplished the following in the project:
+
+**NLU training**: Used rasa-nlu-trainer to create more training examples for entities and intents. 
+
+**Built actions for the bot:** Read through the Zomato API documentation to extract the features such as the average price for two people and restaurant’s user rating. Built an ‘action’ for sending emails from Python.
+
+**Created more stories**: Used train_online.py file to create more stories. 
